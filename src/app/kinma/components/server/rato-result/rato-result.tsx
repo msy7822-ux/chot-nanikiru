@@ -3,7 +3,9 @@ import { Pai } from "../pai/pai";
 import { convertPaiName } from "@/utils/pai";
 import { PaiType } from "@/types/paiType";
 
-export const RatoResult = async () => {
+export const RatoResult = async ({ isDisplay }: { isDisplay: boolean }) => {
+  if (!isDisplay) return null;
+
   const situation = await supabase.from("situations").select("*");
   const record = situation.data ? situation.data[5] : null;
   const { tehai } = record! as { tehai: PaiType[] };

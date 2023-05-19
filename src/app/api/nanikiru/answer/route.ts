@@ -11,8 +11,6 @@ export async function POST(req: Request) {
       answer: body?.answer,
     });
 
-    console.log(result);
-
     return NextResponse.json({ result });
   } catch (err) {
     console.log(err);
