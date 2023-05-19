@@ -4,6 +4,7 @@ import { PaiType } from "@/types/paiType";
 import { Pai } from "../../server/pai/pai";
 import { convertPaiName } from "@/utils/pai";
 import { useState } from "react";
+import { SubmitButton } from "../submit-button/submit-button";
 
 export const AnswerOptions = ({ tehai }: { tehai: PaiType[] }) => {
   const [selectPai, setSelectPai] = useState<PaiType | null>(null);
@@ -14,12 +15,12 @@ export const AnswerOptions = ({ tehai }: { tehai: PaiType[] }) => {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-4 gap-y-5 place-items-center">
         {tehai.map((pai, i) => {
           return (
             <button
               type="button"
-              className="cursor-pointer"
+              className="cursor-pointer text-center"
               onClick={() => handleOnSelect(pai)}
               key={i}
             >
@@ -40,6 +41,8 @@ export const AnswerOptions = ({ tehai }: { tehai: PaiType[] }) => {
           </div>
         </div>
       )}
+
+      <SubmitButton selectPai={selectPai}></SubmitButton>
     </div>
   );
 };

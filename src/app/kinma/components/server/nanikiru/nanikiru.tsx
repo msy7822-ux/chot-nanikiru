@@ -11,7 +11,7 @@ export const Nanikiru = async () => {
     <div className="flex flex-col gap-5">
       {/* @ts-expect-error Server Component */}
       <Situation record={record}></Situation>
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] my-5 mx-auto">
         <AnswerOptions tehai={record?.tehai as PaiType[]}></AnswerOptions>
       </div>
     </div>
