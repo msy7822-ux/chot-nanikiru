@@ -1,7 +1,7 @@
 import { PromptExecuter } from "simple-prompt-executer";
 
 const prompt = {
-  prompt: `麻雀のシチュエーションを作成してください。`,
+  prompt: `麻雀のシチュエーションを作成してください。前回とは異なるシチュエーションでお願いします。`,
   exampleDescription: "麻雀のシチュエーションです",
   response: {
     junme: {
@@ -10,7 +10,8 @@ const prompt = {
     },
     bakaze: {
       example: "南",
-      description: "麻雀の場風",
+      description:
+        "麻雀の場風です。半荘を想定しているので、東か南でお願いします。",
     },
     jikaze: {
       example: "東",

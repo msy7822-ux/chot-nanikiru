@@ -8,7 +8,7 @@ import { SituationType } from "@/types/situation";
 
 export const Situation = async ({ record }: { record: SituationType }) => {
   return (
-    <div className="bg-[#29711a] p-5">
+    <div className="bg-[#29711a] p-5 rounded-[0 6px 0 6px]">
       <div className="py-5 flex flex-col gap-5">
         <div className="flex gap-5">
           <h1 className="text-xl font-bold text-white">【お題】</h1>

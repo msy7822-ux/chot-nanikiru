@@ -5,15 +5,17 @@ import { PaiType } from "@/types/paiType";
 
 export const Nanikiru = async () => {
   const situation = await supabase.from("situations").select("*");
-  const record = situation.data ? situation.data[5] : null;
+  const latestRecord = situation.data ? situation.data?.slice(-1)[0] : null;
 
   return (
     <div className="flex flex-col gap-5">
       {/* @ts-expect-error Server Component */}
-      <Situation record={record}></Situation>
-      <div className="w-[90%] my-5 mx-auto">
-        <AnswerOptions tehai={record?.tehai as PaiType[]}></AnswerOptions>
-      </div>
+      <Situation record={latestRecord}></Situation>
+      <AnswerOptions
+        tehai={latestRecord?.tehai as PaiType[]}
+        tsumo={latestRecord?.tsumo as PaiType}
+        isDisplay
+      ></AnswerOptions>
     </div>
   );
 };

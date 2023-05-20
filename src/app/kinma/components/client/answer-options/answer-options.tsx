@@ -1,48 +1,35 @@
 "use client";
 
 import { PaiType } from "@/types/paiType";
-import { Pai } from "../../server/pai/pai";
-import { convertPaiName } from "@/utils/pai";
 import { useState } from "react";
-import { SubmitButton } from "../submit-button/submit-button";
+import { OpenModalButton } from "../open-modal-button/open-modal-button";
+import { AnswerModal } from "../answer-modal/answer-modal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export const AnswerOptions = ({ tehai }: { tehai: PaiType[] }) => {
-  const [selectPai, setSelectPai] = useState<PaiType | null>(null);
+type Props = {
+  tehai: PaiType[];
+  tsumo: PaiType;
+  isDisplay: boolean;
+};
 
-  const handleOnSelect = (pai: PaiType) => {
-    setSelectPai(pai);
-  };
+export const AnswerOptions = ({ tehai, isDisplay, tsumo }: Props) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  if (!isDisplay) return null;
 
   return (
     <div>
-      <div className="grid grid-cols-4 gap-y-5 place-items-center">
-        {tehai.map((pai, i) => {
-          return (
-            <button
-              type="button"
-              className="cursor-pointer text-center"
-              onClick={() => handleOnSelect(pai)}
-              key={i}
-            >
-              <div className="font-bold">{convertPaiName(pai)}</div>
-              <div>
-                <Pai type={pai}></Pai>
-              </div>
-            </button>
-          );
-        })}
+      <ToastContainer></ToastContainer>
+      <div className="w-full mx-auto max-w-[200px]">
+        <OpenModalButton open={() => setIsOpenModal(true)}></OpenModalButton>
       </div>
-
-      {selectPai && (
-        <div>
-          <div>{convertPaiName(selectPai!)}</div>
-          <div>
-            <Pai type={selectPai!}></Pai>
-          </div>
-        </div>
-      )}
-
-      <SubmitButton selectPai={selectPai}></SubmitButton>
+      <AnswerModal
+        isOpen={isOpenModal}
+        tehai={tehai}
+        tsumo={tsumo}
+        close={() => setIsOpenModal(false)}
+      ></AnswerModal>
     </div>
   );
 };
