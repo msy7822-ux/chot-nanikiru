@@ -6,6 +6,7 @@ import { OpenModalButton } from "../open-modal-button/open-modal-button";
 import { AnswerModal } from "../answer-modal/answer-modal";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ResultButton } from "../answer-modal/result-button";
 
 type Props = {
   tehai: PaiType[];
@@ -24,6 +25,10 @@ export const AnswerOptions = ({ tehai, isDisplay, tsumo }: Props) => {
       <div className="w-full mx-auto max-w-[200px]">
         <OpenModalButton open={() => setIsOpenModal(true)}></OpenModalButton>
       </div>
+      <div className="w-full flex justify-end">
+        <ResultButton></ResultButton>
+      </div>
+
       <AnswerModal
         isOpen={isOpenModal}
         tehai={tehai}

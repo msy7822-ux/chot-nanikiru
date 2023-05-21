@@ -18,12 +18,10 @@ export type PageProps = {
 const KinmaPage = async (_pageProps: PageProps) => {
   return (
     <Layout>
-      <div className="">
-        <Suspense>
-          {/* @ts-expect-error Server Component */}
-          <Nanikiru></Nanikiru>
-        </Suspense>
-      </div>
+      <Suspense fallback={<></>}>
+        {/* @ts-expect-error Server Component */}
+        <Nanikiru></Nanikiru>
+      </Suspense>
     </Layout>
   );
 };
