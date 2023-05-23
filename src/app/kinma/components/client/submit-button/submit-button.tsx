@@ -25,17 +25,17 @@ export const SubmitButton = ({
     if (!selectPai) return;
 
     try {
-      // FIXME: できればRoute Handlersすらも使いたくない
-      await fetch("/api/nanikiru/answer", {
-        body: JSON.stringify({
-          situationId: situationId,
-          answer: selectPai,
-        }),
-        method: "POST",
-      });
+      // // FIXME: できればRoute Handlersすらも使いたくない
+      // await fetch("/api/nanikiru/answer", {
+      //   body: JSON.stringify({
+      //     situationId: situationId,
+      //     answer: selectPai,
+      //   }),
+      //   method: "POST",
+      // });
 
       // FIXME: server actionsにするとrouter.refresh()が効かない
-      // await createVote(situationId, selectPai);
+      await createVote(situationId, selectPai);
 
       notify("回答を送信しました");
       clear();
