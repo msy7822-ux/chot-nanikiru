@@ -24,7 +24,8 @@ type VoteType = {
 };
 
 export const getVoteCount = (votes: paiVoteType[]) => {
-  const voteCounts = votes.length;
+  if (!votes || votes.length < 0) return {};
+
   const vote = votes.reduce((obj: VoteType, item: paiVoteType) => {
     const answer = item.answer;
     obj[answer] = (obj[answer] || 0) + 1;
