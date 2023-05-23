@@ -1,11 +1,10 @@
 "use client";
 
 import { PaiType } from "@/types/paiType";
-import { Tehai } from "../../server/situation/tehai/tehai";
-import { Tsumo } from "../../server/situation/tsumo/tsumo";
 import { ResultButton } from "../answer-modal/result-button";
-import { useState } from "react";
-import { getVoteCount } from "@/utils/pai";
+import { Suspense, useState } from "react";
+import { Votes } from "./votes/votes";
+import { Loading } from "./votes/loading";
 
 type Props = {
   votes: any;
@@ -14,22 +13,24 @@ type Props = {
 };
 
 export const Results = ({ votes, tehai, tsumo }: Props) => {
-  const [isOpenResult, setIsOpenResult] = useState(false);
-
-  const vote = getVoteCount(votes);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div>
       <div className="w-full flex justify-end">
-        <ResultButton open={() => setIsOpenResult(true)}></ResultButton>
+        <ResultButton open={() => setIsLoading(true)}></ResultButton>
       </div>
-
-      {isOpenResult && (
-        <div className="flex flex-wrap gap-3">
-          <Tehai tehai={tehai ?? []}></Tehai>
-          <Tsumo tsumo={tsumo ?? ""}></Tsumo>
-        </div>
-      )}
+      <div className="px-10 py-5">
+        <Suspense fallback={<Loading></Loading>}>
+          <Votes
+            votes={votes}
+            tehai={tehai}
+            tsumo={tsumo}
+            isLoading={isLoading}
+            finish={() => setIsLoading(false)}
+          ></Votes>
+        </Suspense>
+      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@
 import { PaiType } from "@/types/paiType";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { createVote } from "@/app/actions/pai";
 
 type Props = {
   selectPai: PaiType | null;
@@ -24,6 +25,7 @@ export const SubmitButton = ({
     if (!selectPai) return;
 
     try {
+      // FIXME: できればRoute Handlersすらも使いたくない
       await fetch("/api/nanikiru/answer", {
         body: JSON.stringify({
           situationId: situationId,
@@ -32,13 +34,17 @@ export const SubmitButton = ({
         method: "POST",
       });
 
+      // FIXME: server actionsにするとrouter.refresh()が効かない
+      // await createVote(situationId, selectPai);
+
       notify("回答を送信しました");
       clear();
       close();
 
-      // サーバーに再度リクエストを送信し、サーバコンポーネントを再レンダリングさせる(クライアントへの影響なし)
       router.refresh();
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

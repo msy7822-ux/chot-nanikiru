@@ -31,5 +31,5 @@ export const getVoteCount = (votes: paiVoteType[]) => {
     return obj;
   }, {});
 
-  console.log(vote);
+  return vote;
 };
