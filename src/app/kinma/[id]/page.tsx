@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import type { ReadonlyURLSearchParams } from "next/navigation";
 import { Nanikiru } from "../components/server/nanikiru/nanikiru";
 import Layout from "../../layout";
+import { Header } from "../components/server/layouts/header/header";
 
 export const metadata = {
   title: "chot kinma",
@@ -20,10 +21,13 @@ const KinmaPage = async ({ params }: PageProps) => {
 
   return (
     <Layout>
-      <Suspense fallback={<></>}>
-        {/* @ts-expect-error Server Component */}
-        <Nanikiru situationId={situationId}></Nanikiru>
-      </Suspense>
+      <Header></Header>
+      <div className="mt-[56px]">
+        <Suspense fallback={<></>}>
+          {/* @ts-expect-error Server Component */}
+          <Nanikiru situationId={situationId}></Nanikiru>
+        </Suspense>
+      </div>
     </Layout>
   );
 };
