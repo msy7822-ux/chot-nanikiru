@@ -1,4 +1,4 @@
-import { PaiType } from "@/types/paiType";
+import { PaiType, paiVoteType } from "@/types/paiType";
 import * as paiJson from "../../public/pai.json";
 
 export const convertPaiName = (pai: PaiType): string => {
@@ -17,4 +17,19 @@ export const convertPaiName = (pai: PaiType): string => {
       : "";
 
   return name as string;
+};
+
+type VoteType = {
+  [answer: string]: number;
+};
+
+export const getVoteCount = (votes: paiVoteType[]) => {
+  const voteCounts = votes.length;
+  const vote = votes.reduce((obj: VoteType, item: paiVoteType) => {
+    const answer = item.answer;
+    obj[answer] = (obj[answer] || 0) + 1;
+    return obj;
+  }, {});
+
+  console.log(vote);
 };

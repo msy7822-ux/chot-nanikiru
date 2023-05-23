@@ -6,11 +6,17 @@ import { useRouter } from "next/navigation";
 
 type Props = {
   selectPai: PaiType | null;
+  situationId: string;
   close: () => void;
   clear: () => void;
 };
 
-export const SubmitButton = ({ selectPai, close, clear }: Props) => {
+export const SubmitButton = ({
+  selectPai,
+  close,
+  clear,
+  situationId,
+}: Props) => {
   const notify = (text: string) => toast(text ?? "");
   const router = useRouter();
 
@@ -20,7 +26,7 @@ export const SubmitButton = ({ selectPai, close, clear }: Props) => {
     try {
       await fetch("/api/nanikiru/answer", {
         body: JSON.stringify({
-          situationId: "0c1c0792-b35a-4790-9672-8ac8a30f15a5",
+          situationId: situationId,
           answer: selectPai,
         }),
         method: "POST",

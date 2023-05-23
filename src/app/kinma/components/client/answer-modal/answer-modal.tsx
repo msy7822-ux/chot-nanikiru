@@ -10,12 +10,19 @@ import { SubmitButton } from "../submit-button/submit-button";
 type SelectPaiType = { id: number; pai: PaiType } | null;
 type Props = {
   isOpen: boolean;
+  situationId: string;
   tehai: PaiType[];
   tsumo: PaiType;
   close: () => void;
 };
 
-export const AnswerModal = ({ isOpen, tehai, close, tsumo }: Props) => {
+export const AnswerModal = ({
+  isOpen,
+  tehai,
+  close,
+  tsumo,
+  situationId,
+}: Props) => {
   const [selectPai, setSelectPai] = useState<SelectPaiType>(null);
   const handleOnSelect = (pai: PaiType, id: number) => {
     setSelectPai({ id, pai });
@@ -75,6 +82,7 @@ export const AnswerModal = ({ isOpen, tehai, close, tsumo }: Props) => {
           <div className="mt-5 w-full mx-auto max-w-[200px]">
             <SubmitButton
               selectPai={selectPai?.pai!}
+              situationId={situationId}
               close={close}
               clear={() => setSelectPai(null)}
             ></SubmitButton>

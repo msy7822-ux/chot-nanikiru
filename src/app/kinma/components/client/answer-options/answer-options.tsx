@@ -9,12 +9,18 @@ import "react-toastify/dist/ReactToastify.css";
 import { ResultButton } from "../answer-modal/result-button";
 
 type Props = {
+  situationId: string;
   tehai: PaiType[];
   tsumo: PaiType;
   isDisplay: boolean;
 };
 
-export const AnswerOptions = ({ tehai, isDisplay, tsumo }: Props) => {
+export const AnswerOptions = ({
+  tehai,
+  isDisplay,
+  tsumo,
+  situationId,
+}: Props) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   if (!isDisplay) return null;
@@ -25,11 +31,9 @@ export const AnswerOptions = ({ tehai, isDisplay, tsumo }: Props) => {
       <div className="w-full mx-auto max-w-[200px]">
         <OpenModalButton open={() => setIsOpenModal(true)}></OpenModalButton>
       </div>
-      <div className="w-full flex justify-end">
-        <ResultButton></ResultButton>
-      </div>
 
       <AnswerModal
+        situationId={situationId}
         isOpen={isOpenModal}
         tehai={tehai}
         tsumo={tsumo}

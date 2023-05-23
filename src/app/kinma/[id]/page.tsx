@@ -1,26 +1,28 @@
 import { Suspense } from "react";
 import type { ReadonlyURLSearchParams } from "next/navigation";
-import { Nanikiru } from "./components/server/nanikiru/nanikiru";
-import Layout from "../layout";
+import { Nanikiru } from "../components/server/nanikiru/nanikiru";
+import Layout from "../../layout";
 
 export const metadata = {
-  title: "New Tab",
+  title: "chot kinma",
   description: "This is New Tab Override Page",
 };
 
 export type PageProps = {
-  params: {};
+  params: { id: string };
   searchParams: ReadonlyURLSearchParams & {
     location: string;
   };
 };
 
-const KinmaPage = async (_pageProps: PageProps) => {
+const KinmaPage = async ({ params }: PageProps) => {
+  const situationId = params.id;
+
   return (
     <Layout>
       <Suspense fallback={<></>}>
         {/* @ts-expect-error Server Component */}
-        <Nanikiru></Nanikiru>
+        <Nanikiru situationId={situationId}></Nanikiru>
       </Suspense>
     </Layout>
   );
