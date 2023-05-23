@@ -3,8 +3,10 @@ import { Header } from "./kinma/components/server/layouts/header/header";
 import { SituationsList } from "./kinma/components/server/situations-list/situations-list";
 
 export default async function Home() {
-  const { data: situations } = await supabase.from("situations").select("*");
-  console.log(situations);
+  const { data: situations } = await supabase
+    .from("situations")
+    .select("*")
+    .order("created_at", { ascending: true });
 
   return (
     <main className="relative max-w-[800px] w-full mx-auto py-24 px-5">
