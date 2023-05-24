@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const result = await supabase.from("votes").insert({
       id: uuidv4(),
-      situationId: body?.situationId,
+      situation_id: body?.situationId,
       answer: body?.answer,
     });
 

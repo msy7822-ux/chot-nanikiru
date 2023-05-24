@@ -9,7 +9,7 @@ export const createVote = async (situationId: string, answer: PaiType) => {
 
   const { error } = await supabase.from("votes").insert({
     id: uuid,
-    situationId: situationId,
+    situation_id: situationId,
     answer: answer,
   });
 

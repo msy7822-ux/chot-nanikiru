@@ -11,8 +11,10 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
     .eq("id", situationId)
     .single();
 
-  const { data: votes } = await supabase.from("votes").select("*");
-  // .eq("situationId", situationId);
+  const { data: votes } = await supabase
+    .from("votes")
+    .select("*")
+    .eq("situation_id", situationId);
   // .order("created_at", { ascending: true });
 
   console.log("situationId", situationId);

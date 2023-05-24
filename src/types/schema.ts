@@ -74,19 +74,19 @@ export interface Database {
           answer: string
           created_at: string
           id: string
-          situationId: string
+          situation_id: string
         }
         Insert: {
           answer: string
           created_at?: string
           id: string
-          situationId: string
+          situation_id: string
         }
         Update: {
           answer?: string
           created_at?: string
           id?: string
-          situationId?: string
+          situation_id?: string
         }
       }
     }
