@@ -16,6 +16,8 @@ export type PageProps = {
   };
 };
 
+export const revalidate = 0;
+
 const KinmaPage = async ({ params }: PageProps) => {
   const situationId = params.id;
 

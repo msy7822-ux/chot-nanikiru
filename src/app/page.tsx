@@ -2,6 +2,8 @@ import { Header } from "./kinma/components/server/layouts/header/header";
 import { SituationsList } from "./kinma/components/server/situations-list/situations-list";
 import { Suspense } from "react";
 
+export const revalidate = 0;
+
 export default function Home() {
   return (
     <main className="bg-[url(/majan-back..jpeg)] bg-center bg-no-repeat bg-cover">

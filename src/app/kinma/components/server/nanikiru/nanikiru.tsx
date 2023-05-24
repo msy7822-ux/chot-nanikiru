@@ -14,8 +14,8 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
   const { data: votes, error } = await supabase
     .from("votes")
     .select("*")
-    .eq("situation_id", "00e922fa-4711-4dce-850a-59e748b5d919");
-  // .eq("situation_id", situationId);
+    .eq("situation_id", `${situationId}`);
+  // .eq("situation_id", "00e922fa-4711-4dce-850a-59e748b5d919");
   // .order("created_at", { ascending: true });
 
   console.log("situationId", situationId);
