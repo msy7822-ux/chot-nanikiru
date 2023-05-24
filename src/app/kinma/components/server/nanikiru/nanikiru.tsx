@@ -11,7 +11,7 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
     .eq("id", situationId)
     .single();
 
-  const { data: votes } = await supabase
+  const { data: votes, error } = await supabase
     .from("votes")
     .select("*")
     .eq("situation_id", situationId);
@@ -20,6 +20,7 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
   console.log("situationId", situationId);
   console.log("latestRecord", latestRecord);
   console.log("votes", votes);
+  console.log("error", error);
 
   return (
     <div className="flex flex-col gap-5">
