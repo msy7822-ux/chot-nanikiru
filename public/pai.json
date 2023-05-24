@@ -29,108 +29,108 @@
   },
   "m1": {
     "type": "manzu",
-    "value": 1
+    "value": "1"
   },
   "m2": {
     "type": "manzu",
-    "value": 2
+    "value": "2"
   },
   "m3": {
     "type": "manzu",
-    "value": 3
+    "value": "3"
   },
   "m4": {
     "type": "manzu",
-    "value": 4
+    "value": "4"
   },
   "m5": {
     "type": "manzu",
-    "value": 5
+    "value": "5"
   },
   "m6": {
     "type": "manzu",
-    "value": 6
+    "value": "6"
   },
   "m7": {
     "type": "manzu",
-    "value": 7
+    "value": "7"
   },
   "m8": {
     "type": "manzu",
-    "value": 8
+    "value": "8"
   },
   "m9": {
     "type": "manzu",
-    "value": 9
+    "value": "9"
   },"p1": {
     "type": "pinzu",
-    "value": 1
+    "value": "1"
   },
   "p2": {
     "type": "pinzu",
-    "value": 2
+    "value": "2"
   },
   "p3": {
     "type": "pinzu",
-    "value": 3
+    "value": "3"
   },
   "p4": {
     "type": "pinzu",
-    "value": 4
+    "value": "4"
   },
   "p5": {
     "type": "pinzu",
-    "value": 5
+    "value": "5"
   },
   "p6": {
     "type": "pinzu",
-    "value": 6
+    "value": "6"
   },
   "p7": {
     "type": "pinzu",
-    "value": 7
+    "value": "7"
   },
   "p8": {
     "type": "pinzu",
-    "value": 8
+    "value": "8"
   },
   "p9": {
     "type": "pinzu",
-    "value": 9
+    "value": "9"
   },"s1": {
     "type": "souzu",
-    "value": 1
+    "value": "1"
   },
   "s2": {
     "type": "souzu",
-    "value": 2
+    "value": "2"
   },
   "s3": {
     "type": "souzu",
-    "value": 3
+    "value": "3"
   },
   "s4": {
     "type": "souzu",
-    "value": 4
+    "value": "4"
   },
   "s5": {
     "type": "souzu",
-    "value": 5
+    "value": "5"
   },
   "s6": {
     "type": "souzu",
-    "value": 6
+    "value": "6"
   },
   "s7": {
     "type": "souzu",
-    "value": 7
+    "value": "7"
   },
   "s8": {
     "type": "souzu",
-    "value": 8
+    "value": "8"
   },
   "s9": {
     "type": "souzu",
-    "value": 9
+    "value": "9"
   }
 }

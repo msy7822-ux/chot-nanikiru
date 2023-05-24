@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -7,7 +8,7 @@ const siteName = "ﾁｮｯﾄ何切る？";
 const description = "アンケート型の麻雀ゲームです";
 const url = "https://chot-nanikiru.vercel.app";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: siteName,
     /** `next-seo`の`titleTemplate`に相当する機能 */
@@ -39,14 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <meta property="og:image" content={`${url}/api/opengraph-image/`} />
-        <meta property="og:image:alt" content="About Acme" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-      </head>
+    <html lang="ja">
       <body className={inter.className}>{children}</body>
     </html>
   );
