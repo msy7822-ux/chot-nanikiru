@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const siteName = "ﾁｮｯﾄ何切る？";
+const siteName = "ﾁｮｯﾄ何切る?";
 const description = "アンケート型の麻雀ゲームです";
 const url = "https://chot-nanikiru.vercel.app";
 

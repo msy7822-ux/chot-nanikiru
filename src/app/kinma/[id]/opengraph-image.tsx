@@ -1,11 +1,9 @@
 import { supabase } from "@/libs/supabase";
 import { ImageResponse } from "next/server";
 
-// Route segment config
 export const runtime = "edge";
 
-// Image metadata
-export const alt = "About Acme";
+export const alt = "ﾁｮｯﾄ何切る?";
 export const size = {
   width: 1200,
   height: 630,
