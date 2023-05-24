@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 
 export const createVote = async (situationId: string, answer: PaiType) => {
   const uuid = uuidv4();
-  console.log(situationId, answer, uuid);
 
   const { error } = await supabase.from("votes").insert({
     id: uuid,
