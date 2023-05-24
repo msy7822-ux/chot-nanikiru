@@ -33,7 +33,7 @@ export const AnswerModal = ({
   return (
     <div className="relative">
       <div className="fixed top-0 left-0 w-screen h-screen bg-black/[.95] flex flex-col gap-8">
-        <div className="relative my-10 mx-8 p-10 max-w-[800px] overflow-scroll sm:mx-auto bg-[#29711a] rounded-md">
+        <div className="relative md:my-10 mt-5 mb-10 mx-8 md:p-10 p-5 max-w-[800px] overflow-scroll sm:mx-auto bg-[#29711a] rounded-md">
           <button
             type="button"
             onClick={() => close()}
@@ -42,11 +42,13 @@ export const AnswerModal = ({
             <IoCloseOutline color="#fff" size={30}></IoCloseOutline>
           </button>
 
-          <p className="text-xl font-bold text-white mb-5">
+          <p className="md:text-xl text-sm font-bold text-white mb-5">
             【牌を選択してください】
           </p>
           <div>
-            <p className="text-white font-bold ml-5 mb-3">手牌</p>
+            <p className="text-white font-bold md:ml-5 mb-3 md:text-base text-sm">
+              手牌
+            </p>
             <div className="flex flex-wrap gap-2 md:gap-5 w-full mx-auto">
               {tehai.map((pai, i) => {
                 return selectPai && selectPai.id === i ? (
@@ -63,7 +65,7 @@ export const AnswerModal = ({
           </div>
 
           <div className="mt-5">
-            <p className="md:w-[75px] w-[45px] text-white font-bold text-center mb-3">
+            <p className="md:w-[75px] w-[45px] text-white font-bold text-center mb-3 md:text-base text-sm">
               ツモ
             </p>
             <div className="inline-block">
