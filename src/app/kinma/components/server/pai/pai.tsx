@@ -5,7 +5,7 @@ export const Pai = ({ type }: { type: PaiType }) => {
   // j5は白なので画像なし
   if (type === "j5")
     return (
-      <div className="shadow-lg bg-white border border-gray md:h-[100px] md:w-[75px] h-[50px] w-[30px] rounded-[6px]"></div>
+      <div className="shadow-lg bg-white border border-gray md:h-[100px] md:w-[75px] h-[70px] w-[45px] rounded-[6px]"></div>
     );
 
   return (
