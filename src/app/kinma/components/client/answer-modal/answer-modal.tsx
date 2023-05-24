@@ -33,7 +33,7 @@ export const AnswerModal = ({
   return (
     <div className="relative">
       <div className="fixed top-0 left-0 w-screen h-screen bg-black/[.95] flex flex-col gap-8">
-        <div className="relative m-8 p-10 max-w-[800px] overflow-scroll sm:mx-auto bg-[#29711a] rounded-md">
+        <div className="relative my-10 mx-8 p-10 max-w-[800px] overflow-scroll sm:mx-auto bg-[#29711a] rounded-md">
           <button
             type="button"
             onClick={() => close()}
