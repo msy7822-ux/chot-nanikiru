@@ -17,6 +17,8 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
     .eq("situationId", situationId)
     .order("created_at", { ascending: true });
 
+  console.log("situationId", situationId);
+  console.log("latestRecord", latestRecord);
   console.log("votes", votes);
 
   return (
