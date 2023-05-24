@@ -16,6 +16,7 @@
     "@types/react-dom": "18.2.4",
     "@types/uuid": "^9.0.1",
     "@vercel/kv": "^0.2.1",
+    "@vercel/og": "^0.5.5",
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
