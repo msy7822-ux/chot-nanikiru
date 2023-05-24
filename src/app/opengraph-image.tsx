@@ -1,6 +1,5 @@
 import { supabase } from "@/libs/supabase";
-import { ImageResponse } from "@vercel/og";
-import { NextRequest } from "next/server";
+import { NextRequest, ImageResponse } from "next/server";
 
 // Route segment config
 export const runtime = "edge";
