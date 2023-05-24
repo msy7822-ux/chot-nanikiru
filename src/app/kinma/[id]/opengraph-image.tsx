@@ -1,6 +1,5 @@
 import { supabase } from "@/libs/supabase";
 import { ImageResponse } from "@vercel/og";
-import { PaiType } from "@/types/paiType";
 
 // Route segment config
 export const runtime = "edge";
