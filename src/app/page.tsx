@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export default function Home() {
   return (
-    <main className="bg-[url(/majan-back..jpeg)] bg-center bg-no-repeat bg-cover">
+    <main className="">
       <div className="relative max-w-[800px] w-full mx-auto py-24 px-5 ">
         <Header></Header>
         <h2 className="text-xl font-bold mb-5 text-[#29711a]">
