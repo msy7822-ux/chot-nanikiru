@@ -17,6 +17,8 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
     .eq("situationId", situationId)
     .order("created_at", { ascending: true });
 
+  console.log("votes", votes);
+
   return (
     <div className="flex flex-col gap-5">
       {/* @ts-expect-error Server Component */}
