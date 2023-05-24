@@ -63,7 +63,7 @@ export const AnswerModal = ({
           </div>
 
           <div className="mt-5">
-            <p className="w-[75px] text-white font-bold text-center mb-3">
+            <p className="md:w-[75px] w-[45px] text-white font-bold text-center mb-3">
               ツモ
             </p>
             <div className="inline-block">
