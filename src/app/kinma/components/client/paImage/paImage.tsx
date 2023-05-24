@@ -3,9 +3,11 @@
 import Image from "next/image";
 import type { PaiType } from "../../../../../types/paiType";
 
-export const PaImage = ({ type }: { type: PaiType }) => {
+type Props = { type: PaiType; className?: string };
+
+export const PaImage = ({ type, className = "" }: Props) => {
   return (
-    <div>
+    <div className={className}>
       <Image src={`/pais/${type}.png`} alt="" width={100} height={100} />
     </div>
   );

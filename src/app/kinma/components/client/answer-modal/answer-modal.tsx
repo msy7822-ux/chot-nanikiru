@@ -47,7 +47,7 @@ export const AnswerModal = ({
           </p>
           <div>
             <p className="text-white font-bold ml-5 mb-3">手牌</p>
-            <div className="flex flex-wrap gap-5 w-full mx-auto">
+            <div className="flex flex-wrap gap-2 md:gap-5 w-full mx-auto">
               {tehai.map((pai, i) => {
                 return selectPai && selectPai.id === i ? (
                   <SelectedPai pai={pai}></SelectedPai>
