@@ -14,7 +14,7 @@ export const ResultButton = ({ open }: Props) => {
       onClick={() => open()}
     >
       <SlEye></SlEye>
-      <span>みんなの回答結果をみる</span>
+      <span className="md:text-base text-sm">みんなの回答結果をみる</span>
     </button>
   );
 };
