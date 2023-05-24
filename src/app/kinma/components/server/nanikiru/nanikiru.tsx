@@ -14,8 +14,8 @@ export const Nanikiru = async ({ situationId }: { situationId: string }) => {
   const { data: votes } = await supabase
     .from("votes")
     .select("*")
-    .eq("situationId", situationId)
-    .order("created_at", { ascending: true });
+    .eq("situationId", situationId);
+  // .order("created_at", { ascending: true });
 
   console.log("situationId", situationId);
   console.log("latestRecord", latestRecord);
