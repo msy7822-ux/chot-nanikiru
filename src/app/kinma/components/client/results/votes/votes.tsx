@@ -31,6 +31,8 @@ function sleep(
 export const Votes = ({ votes, tehai, tsumo, isLoading, finish }: Props) => {
   const [isOpenResult, setIsOpenResult] = useState(false);
 
+  console.log(votes);
+
   const vote = getVoteCount(votes);
 
   if (isLoading)
