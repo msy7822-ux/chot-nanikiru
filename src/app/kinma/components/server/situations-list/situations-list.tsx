@@ -19,8 +19,7 @@ export const SituationsList = async () => {
           </div>
         ))}
       </div>
-      <button type="button">もっと見る</button>
-      <button onClick={() => methodDoesNotExist()}>Break the world</button>;
+      {/* <button type="button">もっと見る</button> */}
     </div>
   );
 };
