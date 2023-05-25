@@ -10,6 +10,7 @@
     "supabase:gen:types": "npx supabase gen types typescript --linked > src/types/schema.ts"
   },
   "dependencies": {
+    "@sentry/nextjs": "^7.53.1",
     "@supabase/supabase-js": "^2.22.0",
     "@types/node": "20.1.5",
     "@types/react": "18.2.6",
