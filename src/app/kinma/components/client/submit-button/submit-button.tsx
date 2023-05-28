@@ -31,7 +31,7 @@ export const SubmitButton = ({
       clear();
       close();
 
-      router.refresh();
+      // router.refresh();
     } catch (error) {
       console.log(error);
     }
